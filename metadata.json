@@ -1,0 +1,9 @@
+{
+  "name": "PUNKKA-AOS",
+  "description": "The official Arctic Operating System for Konsta Punkka. A premium wildlife photography ecosystem powered by Nordic design and Gemini AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
