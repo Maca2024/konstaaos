@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Play, Share2, Clock, X } from 'lucide-react';
+import { IMAGES } from '../assets';
 
 export const YouTube: React.FC = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -9,37 +10,37 @@ export const YouTube: React.FC = () => {
     id: "q2eoIBPSHys",
     title: "Photographing The Rarest Animals In The World",
     desc: "Join me on a journey to find the most elusive creatures in the arctic circle.",
-    thumb: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80"
+    thumb: IMAGES.KONSTA.PORTRAIT_CAP // "download-1.jpg" - Konsta in cap
   };
 
   const videos = [
     {
-      id: "7_KMs4s3fXo", // Placeholder ID for demo, replaced with realistic look
+      id: "7_KMs4s3fXo",
       title: "How I Photograph Shy Wildlife (Red Squirrels)",
       views: "1.2M views",
       duration: "14:20",
-      thumb: "https://images.unsplash.com/photo-1507666405895-422eee4d517f?w=800&q=80"
+      thumb: IMAGES.WILDLIFE.SQUIRREL // "DSC_3349+(1).webp" - Signature squirrel
     },
     {
       id: "x6bS1X9d7f0",
       title: "Surviving -30C: Arctic Gear Guide 2025",
       views: "890K views",
       duration: "22:15",
-      thumb: "https://images.unsplash.com/photo-1518182170546-0766eb6f6a56?w=800&q=80"
+      thumb: IMAGES.HERO.WINTER_ROAD // "download.jpg" - Winter road/atmosphere
     },
     {
       id: "m9S3X8d7f0",
       title: "Cinematic Composition Rules I Break",
       views: "450K views",
       duration: "18:45",
-      thumb: "https://images.unsplash.com/photo-1470093851219-69951fcbb533?w=800&q=80"
+      thumb: IMAGES.KONSTA.FIELD_LENS // "images (1)-1.jpg" - Konsta with lens
     },
     {
       id: "p8D2X9d7f0",
       title: "Tracking Wolves in Eastern Finland",
       views: "2.1M views",
       duration: "35:00",
-      thumb: "https://images.unsplash.com/photo-1598347976578-b46595e02b60?w=800&q=80"
+      thumb: IMAGES.WILDLIFE.WOLF // "images (1).jpg" - Wolf
     },
   ];
 
@@ -50,11 +51,11 @@ export const YouTube: React.FC = () => {
           <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 md:p-20 animate-in fade-in duration-300">
             <button 
               onClick={() => setActiveVideo(null)}
-              className="absolute top-8 right-8 text-white hover:text-luxury-gold transition-colors"
+              className="absolute top-8 right-8 text-white hover:text-luxury-gold transition-colors z-50"
             >
               <X className="w-8 h-8" />
             </button>
-            <div className="w-full h-full max-w-7xl aspect-video bg-black border border-white/10 shadow-2xl shadow-luxury-gold/10">
+            <div className="w-full h-full max-w-7xl aspect-video bg-black border border-white/10 shadow-2xl shadow-luxury-gold/10 relative">
               <iframe 
                 width="100%" 
                 height="100%" 

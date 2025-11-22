@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { Workshops } from './components/Workshops';
@@ -10,6 +11,7 @@ import { Socials } from './components/Socials';
 import { Landing } from './components/Landing';
 import { Taigaschool } from './components/Taigaschool';
 import { ViewState } from './types';
+import { IMAGES } from './assets';
 import { LayoutGrid, Compass, Cpu, Calendar, Users, Image, Youtube, Share2, Menu, X, Circle, Trees } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -86,8 +88,8 @@ const App: React.FC = () => {
           <div className="p-6 border-t border-white/5 bg-black/20">
               <div className="flex items-center">
                   <div className="w-10 h-10 overflow-hidden rounded-full mr-4 border border-white/10 ring-2 ring-transparent hover:ring-luxury-gold transition-all cursor-pointer">
-                      {/* Konsta Portrait */}
-                      <img src="https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=200&auto=format&fit=crop" alt="Profile" className="w-full h-full object-cover grayscale" />
+                      {/* Authentic Photographer Portrait (User Pick 4: Red Hair) */}
+                      <img src={IMAGES.KONSTA.PORTRAIT_STUDIO} alt="Profile" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex flex-col">
                       <span className="text-sm text-white font-serif">Konsta Punkka</span>

@@ -1,21 +1,22 @@
 
 import React from 'react';
 import { ArrowRight, Wind, Sun, Snowflake, ArrowDown, Flame, Home, Droplets, Axe, Camera, Coffee } from 'lucide-react';
+import { IMAGES } from '../assets';
 
 export const Taigaschool: React.FC = () => {
   return (
      <div className="h-full overflow-y-auto bg-arctic-950 scroll-smooth font-sans text-gray-200 selection:bg-luxury-gold selection:text-black">
         
-        {/* --- HERO SECTION: AERIAL ISLAND (User Pick 4) --- */}
+        {/* --- HERO SECTION: TAIGA BOREALIS --- */}
         <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-             {/* Image: Matches the Aerial Frozen Island photo */}
+             {/* Image: Winter picture of the taiga borealis */}
              <div className="absolute inset-0 bg-arctic-950/20 z-10"></div>
              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-arctic-950 z-10"></div>
              
              <img 
-                src="https://images.unsplash.com/photo-1617056399947-da0c2378471d?q=80&w=2400&auto=format&fit=crop" 
+                src={IMAGES.HERO.WINTER_ROAD}
                 className="absolute inset-0 w-full h-full object-cover animate-[scale-in_1.5s_ease-out] scale-110 brightness-110 saturate-[0.9]" 
-                alt="Kitka Järvi Aerial Wilderness" 
+                alt="Taiga Borealis Winter" 
              />
              
              <div className="relative z-20 text-center px-6 max-w-5xl mx-auto mt-12">
@@ -48,7 +49,7 @@ export const Taigaschool: React.FC = () => {
              </div>
         </div>
 
-        {/* --- PHILOSOPHY SECTION: WOOD & CHAINSAW (User Pick 6) --- */}
+        {/* --- PHILOSOPHY SECTION: WOOD & CHAINSAW --- */}
         <div className="relative py-32 px-8 bg-arctic-900 border-t border-white/5">
             <div className="absolute inset-0 overflow-hidden opacity-30 pointer-events-none">
                  <div className="absolute -left-1/4 top-0 w-1/2 h-full bg-orange-900/20 blur-[150px]"></div>
@@ -87,7 +88,7 @@ export const Taigaschool: React.FC = () => {
                 </div>
                 
                 <div className="relative group">
-                    {/* Image: Chainsaw / Wood Pile (Matches User Image 6) */}
+                    {/* Image: Chainsaw / Wood Pile */}
                     <div className="aspect-[4/5] overflow-hidden rounded-sm relative z-10 border border-white/10">
                         <img src="https://images.unsplash.com/photo-1582108312402-93320404d336?w=1200&q=80" alt="Taiga Lifestyle Wood Chopping" className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s] grayscale hover:grayscale-0" />
                         
@@ -105,17 +106,16 @@ export const Taigaschool: React.FC = () => {
         {/* --- THE TRILOGY (EXPEDITIONS) --- */}
         <div className="bg-black">
             <div className="py-24 text-center">
-                 <span className="text-gray-600 font-mono text-xs tracking-[0.5em] uppercase">Select Your Season</span>
+                 <span className="text-gray-600 font-mono text-xs tracking-[0.5em] uppercase">The 2025 - 2026 Curriculum</span>
             </div>
 
-            {/* EXPEDITION 1: SUMMER (User Pick 2 - Sunset Campfire) */}
+            {/* EXPEDITION 1: SUMMER - Misty Lake */}
             <div className="group relative h-[90vh] flex items-center overflow-hidden">
-                {/* Background: Sunset Silhouette Group */}
                 <div className="absolute inset-0 w-full h-full">
                     <img 
-                        src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2400&auto=format&fit=crop" 
+                        src="https://images.unsplash.com/photo-1506544777-64cfbe1142df?q=80&w=2400&auto=format&fit=crop" 
                         className="w-full h-full object-cover object-center transform scale-100 group-hover:scale-105 transition-transform duration-[20s]" 
-                        alt="Summer Expedition Campfire" 
+                        alt="Misty Summer Lake" 
                     />
                     {/* Heavy Golden Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-900/90 via-orange-900/50 to-transparent mix-blend-multiply z-10"></div>
@@ -129,37 +129,36 @@ export const Taigaschool: React.FC = () => {
                             <Sun className="w-8 h-8 text-yellow-500 animate-pulse" />
                             <span className="text-yellow-500 font-mono text-sm tracking-widest uppercase">The Nightless Night</span>
                         </div>
-                        <h3 className="text-7xl md:text-9xl font-serif text-white mb-4 leading-none text-shadow-lg">
-                            MID <br/> SUMMER
+                        <h3 className="text-6xl md:text-8xl font-serif text-white mb-4 leading-none text-shadow-lg">
+                            Midsummer Magical <br/> <span className="italic text-yellow-500">Kitkajärvi Expedition</span>
                         </h3>
                         <p className="text-orange-100 text-xl font-light max-w-md leading-relaxed drop-shadow-md">
-                            Golden light that never fades. 3 AM coffee by the fire. The silence of the river.
+                            Experience the magic of 24-hour sunlight. Golden hours that last forever, misty mornings on the river, and the peak of Finnish summer.
                         </p>
                     </div>
                     
                     <div className="bg-black/40 backdrop-blur-md border border-white/10 p-8 max-w-sm">
-                        <div className="text-yellow-500 font-serif text-3xl mb-2">June 2025</div>
+                        <div className="text-yellow-500 font-serif text-2xl mb-2">June 20 - 27, 2025</div>
                         <div className="h-px w-full bg-white/20 mb-4"></div>
                         <ul className="space-y-3 font-mono text-xs text-gray-300 mb-8">
                             <li className="flex justify-between"><span>Temp</span> <span className="text-white">15°C / 20°C</span></li>
                             <li className="flex justify-between"><span>Light</span> <span className="text-white">24 Hours</span></li>
-                            <li className="flex justify-between"><span>Activity</span> <span className="text-white">River Floating</span></li>
+                            <li className="flex justify-between"><span>Focus</span> <span className="text-white">Atmosphere & Mist</span></li>
                         </ul>
                         <button className="w-full py-4 bg-yellow-600/20 border border-yellow-600/50 text-yellow-500 font-mono text-xs font-bold uppercase tracking-widest hover:bg-yellow-600 hover:text-black transition-all">
-                            Explore Summer
+                            Reserve Spot
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* EXPEDITION 2: AUTUMN (User Pick 1 - Cabin) */}
+            {/* EXPEDITION 2: AUTUMN - Ruska Forest */}
             <div className="group relative h-[90vh] flex items-center overflow-hidden">
-                {/* Background: Log Cabin */}
                 <div className="absolute inset-0 w-full h-full">
                     <img 
-                        src="https://images.unsplash.com/photo-1522662694434-526c11c2923f?q=80&w=2400&auto=format&fit=crop" 
+                        src="https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=2400&auto=format&fit=crop" 
                         className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[20s]" 
-                        alt="Autumn Cabin" 
+                        alt="Autumn Forest Road" 
                     />
                      {/* Heavy Ruska/Brown Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-l from-amber-950/90 via-amber-900/40 to-transparent mix-blend-multiply z-10"></div>
@@ -172,37 +171,36 @@ export const Taigaschool: React.FC = () => {
                             <span className="text-orange-400 font-mono text-sm tracking-widest uppercase">Colors of Decay</span>
                             <Wind className="w-8 h-8 text-orange-400" />
                         </div>
-                        <h3 className="text-7xl md:text-9xl font-serif text-white mb-4 leading-none text-shadow-lg">
-                            RUSKA <br/> SEASON
+                        <h3 className="text-6xl md:text-8xl font-serif text-white mb-4 leading-none text-shadow-lg">
+                            Magical Colors <br/> <span className="italic text-orange-500">of Autumn Expedition</span>
                         </h3>
                         <p className="text-orange-100 text-xl font-light max-w-md ml-auto leading-relaxed drop-shadow-md">
-                            The forest turns to gold. Crisp mornings, wood smoke, and the first dance of the Aurora.
+                            The Taiga explodes in reds and golds. We chase the 'Ruska' season, forage for mushrooms, and capture the first Auroras of the season.
                         </p>
                     </div>
                     
                     <div className="bg-black/40 backdrop-blur-md border border-white/10 p-8 max-w-sm">
-                        <div className="text-orange-400 font-serif text-3xl mb-2">September 2025</div>
+                        <div className="text-orange-400 font-serif text-2xl mb-2">Sept 15 - 22, 2025</div>
                         <div className="h-px w-full bg-white/20 mb-4"></div>
                         <ul className="space-y-3 font-mono text-xs text-gray-300 mb-8">
                             <li className="flex justify-between"><span>Temp</span> <span className="text-white">5°C / 12°C</span></li>
                             <li className="flex justify-between"><span>Light</span> <span className="text-white">12 Hours</span></li>
-                            <li className="flex justify-between"><span>Activity</span> <span className="text-white">Log Cabin Living</span></li>
+                            <li className="flex justify-between"><span>Focus</span> <span className="text-white">Color & Macro</span></li>
                         </ul>
                         <button className="w-full py-4 bg-orange-600/20 border border-orange-600/50 text-orange-500 font-mono text-xs font-bold uppercase tracking-widest hover:bg-orange-600 hover:text-black transition-all">
-                            Explore Autumn
+                            Reserve Spot
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* EXPEDITION 3: WINTER (User Pick 3 & 5 - Ice Dipping) */}
+            {/* EXPEDITION 3: WINTER - Deep Snow */}
             <div className="group relative h-[90vh] flex items-center overflow-hidden">
-                {/* Background: Ice Dipping Group */}
                 <div className="absolute inset-0 w-full h-full">
                     <img 
-                        src="https://images.unsplash.com/photo-1583524505974-6acd37885776?q=80&w=2400&auto=format&fit=crop" 
+                        src="https://images.unsplash.com/photo-1518182170546-0766eb6f6a56?q=80&w=2400&auto=format&fit=crop" 
                         className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[20s]" 
-                        alt="Winter Ice Swimming" 
+                        alt="Deep Winter Snow" 
                     />
                     {/* Heavy Blue/Cold Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/40 to-transparent mix-blend-multiply z-10"></div>
@@ -215,31 +213,31 @@ export const Taigaschool: React.FC = () => {
                             <Snowflake className="w-8 h-8 text-blue-300 animate-spin-slow" />
                             <span className="text-blue-300 font-mono text-sm tracking-widest uppercase">The Deep Freeze</span>
                         </div>
-                        <h3 className="text-7xl md:text-9xl font-serif text-white mb-4 leading-none text-shadow-lg">
-                            KAAMOS <br/> WINTER
+                        <h3 className="text-6xl md:text-8xl font-serif text-white mb-4 leading-none text-shadow-lg">
+                            Deep Dark <br/> <span className="italic text-blue-300">Winter Expedition</span>
                         </h3>
                         <p className="text-blue-100 text-xl font-light max-w-md leading-relaxed drop-shadow-md">
-                            The blue moment. We break the ice, we breathe the cold, we find warmth in the community.
+                            The ultimate test. Embrace the silence of the deep winter, master the art of the "Avanto" ice dip, and photograph the frozen landscapes.
                         </p>
                     </div>
                     
                     <div className="bg-black/40 backdrop-blur-md border border-white/10 p-8 max-w-sm">
-                        <div className="text-blue-300 font-serif text-3xl mb-2">March 2026</div>
+                        <div className="text-blue-300 font-serif text-2xl mb-2">March 5 - 12, 2026</div>
                         <div className="h-px w-full bg-white/20 mb-4"></div>
                         <ul className="space-y-3 font-mono text-xs text-gray-300 mb-8">
                             <li className="flex justify-between"><span>Temp</span> <span className="text-white">-15°C / -30°C</span></li>
-                            <li className="flex justify-between"><span>Light</span> <span className="text-white">6 Hours</span></li>
-                            <li className="flex justify-between"><span>Activity</span> <span className="text-white">"Avanto" Ice Dip</span></li>
+                            <li className="flex justify-between"><span>Light</span> <span className="text-white">Increasing</span></li>
+                            <li className="flex justify-between"><span>Focus</span> <span className="text-white">Resilience & Ice</span></li>
                         </ul>
                         <button className="w-full py-4 bg-blue-600/20 border border-blue-600/50 text-blue-400 font-mono text-xs font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-black transition-all">
-                            Explore Winter
+                            Reserve Spot
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        {/* --- VISUAL ARCHIVE (Gallery Grid for Details) --- */}
+        {/* --- VISUAL ARCHIVE --- */}
         <div className="bg-arctic-950 py-24 px-8 border-t border-white/5">
             <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-end mb-16">
@@ -259,7 +257,7 @@ export const Taigaschool: React.FC = () => {
                          </div>
                     </div>
 
-                    {/* Item 2: Coffee / Fire (Matches Campfire vibe) */}
+                    {/* Item 2: Coffee / Fire */}
                     <div className="md:col-span-2 md:row-span-1 relative group overflow-hidden border border-white/5">
                          <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?w=1200&q=80" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" alt="Camp Coffee" />
                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { Instagram, Twitter, Facebook, Globe, ArrowUpRight, Heart } from 'lucide-react';
+import { IMAGES } from '../assets';
 
 export const Socials: React.FC = () => {
   const recentInsta = [
-    "https://images.unsplash.com/photo-1507666405895-422eee4d517f?w=200&q=80", // Squirrel
-    "https://images.unsplash.com/photo-1470093851219-69951fcbb533?w=200&q=80", // Fox
-    "https://images.unsplash.com/photo-1568162603664-fcd658421851?w=200&q=80"  // Bear
+    IMAGES.WILDLIFE.SQUIRREL,
+    IMAGES.WILDLIFE.FOX,
+    IMAGES.WILDLIFE.BEAR
   ];
 
   return (

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Workshop } from '../types';
 import { MapPin, Calendar, Users, ArrowUpRight, CheckCircle, X } from 'lucide-react';
+import { IMAGES } from '../assets';
 
 export const Workshops: React.FC = () => {
   const [booking, setBooking] = useState<Workshop | null>(null);
@@ -14,7 +15,7 @@ export const Workshops: React.FC = () => {
         location: 'Ladakh, Himalayas',
         date: 'Feb 10 - 24, 2026',
         price: 14500,
-        image: 'https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=1600&auto=format&fit=crop',
+        image: IMAGES.WILDLIFE.LEOPARD, // User Pick 6
         spots: 3,
         tier: 'EXPEDITION'
     },
@@ -24,7 +25,7 @@ export const Workshops: React.FC = () => {
       location: 'Kuhmo, Finland',
       date: 'July 15 - 22, 2025',
       price: 3600,
-      image: 'https://images.unsplash.com/photo-1568162603664-fcd658421851?q=80&w=1600&auto=format&fit=crop',
+      image: IMAGES.WILDLIFE.BEAR,
       spots: 4,
       tier: 'BASIC'
     },
@@ -34,17 +35,17 @@ export const Workshops: React.FC = () => {
       location: 'Riisitunturi, Lapland',
       date: 'Jan 10 - 17, 2025',
       price: 4200,
-      image: 'https://images.unsplash.com/photo-1548128724-92eb07781291?q=80&w=1600&auto=format&fit=crop',
+      image: IMAGES.WILDLIFE.OWL,
       spots: 0,
       tier: 'MASTER'
     },
     {
       id: '3',
-      title: 'The Arctic Fox',
+      title: 'Svalbard: Arctic Fox & Puffins',
       location: 'Svalbard',
       date: 'Mar 02 - 09, 2026',
       price: 12000,
-      image: 'https://images.unsplash.com/photo-1470093851219-69951fcbb533?q=80&w=1600&auto=format&fit=crop',
+      image: IMAGES.WILDLIFE.PUFFIN, // User Pick 3
       spots: 2,
       tier: 'EXPEDITION'
     },
@@ -54,7 +55,7 @@ export const Workshops: React.FC = () => {
         location: 'Helsinki Region',
         date: 'Oct 05 - 10, 2025',
         price: 2800,
-        image: 'https://images.unsplash.com/photo-1507666405895-422eee4d517f?q=80&w=1600&auto=format&fit=crop',
+        image: IMAGES.WILDLIFE.SQUIRREL,
         spots: 6,
         tier: 'BASIC'
     }

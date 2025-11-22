@@ -2,6 +2,7 @@
 import React from 'react';
 import { Camera, Users, TrendingUp, Globe, ArrowRight } from 'lucide-react';
 import { StatMetric, ViewState } from '../types';
+import { IMAGES } from '../assets';
 
 interface DashboardProps {
   onNavigate: (view: ViewState) => void;
@@ -16,25 +17,25 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
   ];
 
   const handleSignalClick = (title: string) => {
-      if (title.includes('Snow Leopard')) {
+      if (title.includes('Snow Leopard') || title.includes('Svalbard')) {
           onNavigate(ViewState.WORKSHOPS);
       } else {
-          alert(`Opening details for: ${title}`);
+          onNavigate(ViewState.GALLERY);
       }
   };
 
   return (
     <div className="relative min-h-full overflow-y-auto">
-      {/* Cinematic Hero Section - Northern Lights */}
-      <div className="relative h-[60vh] w-full overflow-hidden">
+      {/* Cinematic Hero Section - Aurora Borealis (User Pick 1) */}
+      <div className="relative h-[65vh] w-full overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2400&auto=format&fit=crop" 
-          alt="Northern Lights" 
-          className="w-full h-full object-cover opacity-70"
+          src={IMAGES.HERO.AURORA} 
+          alt="Aurora Borealis" 
+          className="w-full h-full object-cover opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-arctic-950 via-arctic-950/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-arctic-950 via-arctic-950/20 to-transparent"></div>
         
-        <div className="absolute bottom-0 left-0 p-12 w-full">
+        <div className="absolute bottom-40 left-0 p-12 w-full">
           <div className="max-w-7xl mx-auto">
             <span className="inline-block px-3 py-1 border border-white/20 rounded-full text-xs font-mono text-luxury-gold mb-4 backdrop-blur-md animate-pulse">
               SYSTEM STATUS: ONLINE
@@ -79,32 +80,27 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <div className="space-y-0">
             {[
               { 
-                title: 'Project: Snow Leopard Trust', 
-                meta: 'Partnership Confirmed • Click to view Expedition',
+                title: 'Project: Ghost of the Mountains', 
+                meta: 'Conservation • Himalayas',
                 icon: Globe,
-                img: "https://images.unsplash.com/photo-1552466980-d6b5e999942a?q=80&w=1600&auto=format&fit=crop" // High quality Snow Leopard image
+                img: IMAGES.WILDLIFE.LEOPARD // User Pick 6
               },
               { 
-                title: 'New Print Edition: The White Wolf', 
-                meta: 'Commerce • 5h ago',
+                title: 'New Print: The White Wolf', 
+                meta: 'Fine Art • 5h ago',
                 icon: Camera,
-                img: "https://images.unsplash.com/photo-1598347976578-b46595e02b60?w=200&q=80" // Wolf
+                img: IMAGES.WILDLIFE.WOLF // User Pick 2
               },
               { 
-                title: 'Expedition: Svalbard Fully Booked', 
-                meta: 'Logistics • 1d ago',
+                title: 'Svalbard: Puffin Migration', 
+                meta: 'Expedition Log • 1d ago',
                 icon: Users,
-                img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=200&q=80" // Mountains
+                img: IMAGES.WILDLIFE.PUFFIN // User Pick 3
               },
             ].map((item, i) => (
               <div onClick={() => handleSignalClick(item.title)} key={i} className="group flex items-center gap-6 p-6 border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer">
-                <div className="w-24 h-16 overflow-hidden rounded-sm relative">
-                   <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                   {item.title.includes('Snow Leopard') && (
-                       <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent">
-                           <div className="w-2 h-2 bg-luxury-gold rounded-full animate-pulse"></div>
-                       </div>
-                   )}
+                <div className="w-24 h-16 overflow-hidden rounded-sm relative shrink-0">
+                   <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-all duration-500" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-serif text-white group-hover:text-luxury-gold transition-colors">{item.title}</h3>
@@ -124,8 +120,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           
           <div className="glass-panel p-6 relative overflow-hidden group cursor-pointer">
              <div className="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity">
-                {/* Red Squirrel specific image */}
-                <img src="https://images.unsplash.com/photo-1507666405895-422eee4d517f?w=800&q=80" className="w-full h-full object-cover grayscale" alt="Squirrel Status" />
+                {/* Signature Red Squirrel Close-up */}
+                <img src={IMAGES.WILDLIFE.SQUIRREL} className="w-full h-full object-cover grayscale" alt="Squirrel Status" />
              </div>
              <div className="relative z-10">
                 <div className="flex items-center justify-between mb-6">
@@ -143,10 +139,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                     <div className="flex justify-between text-xs font-mono text-gray-300">
                         <span className="drop-shadow-sm">LIGHT</span>
                         <span className="text-white drop-shadow-sm">4h 20m</span>
-                    </div>
-                    <div className="flex justify-between text-xs font-mono text-gray-300">
-                        <span className="drop-shadow-sm">NEXT TEAM</span>
-                        <span className="text-white drop-shadow-sm">Feb 12</span>
                     </div>
                 </div>
              </div>
