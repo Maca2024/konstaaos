@@ -33,7 +33,9 @@ export const AIStudio: React.FC = () => {
       const aiMsg: Message = { role: 'model', text: result.text, sources: result.sources };
       setMessages(prev => [...prev, aiMsg]);
     } catch (err) {
-       // Error handling
+       console.error("Chat error:", err);
+       const errorMsg: Message = { role: 'model', text: `Error: ${err instanceof Error ? err.message : 'Failed to get response'}` };
+       setMessages(prev => [...prev, errorMsg]);
     } finally {
       setLoading(false);
     }
@@ -60,7 +62,8 @@ export const AIStudio: React.FC = () => {
       const resultUrl = await editArcticPhoto(selectedImage, input || "Enhance lighting for arctic mood");
       setEditedImage(resultUrl);
     } catch (e) {
-      alert("Failed to edit image.");
+      console.error("Image edit error:", e);
+      alert(`Failed to edit image: ${e instanceof Error ? e.message : 'Unknown error'}`);
     } finally {
       setLoading(false);
     }
@@ -73,7 +76,8 @@ export const AIStudio: React.FC = () => {
       const videoUri = await generateArcticVideo(input || "A polar bear walking in snow storm");
       setGeneratedVideo(videoUri);
     } catch (e) {
-        console.error(e);
+        console.error("Video generation error:", e);
+        alert(`Failed to generate video: ${e instanceof Error ? e.message : 'Unknown error'}`);
     } finally {
       setLoading(false);
     }
