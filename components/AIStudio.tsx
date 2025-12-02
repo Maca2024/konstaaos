@@ -1,7 +1,8 @@
+
 import React, { useState, useRef } from 'react';
 import { AITab, Message } from '../types';
 import { generateKonstaAdvice, editArcticPhoto, generateArcticVideo, connectLiveSession } from '../services/geminiService';
-import { Mic, Send, Image as ImageIcon, Film, Sparkles, Wand2, Play, Loader2, Aperture, ArrowRight } from 'lucide-react';
+import { Mic, Image as ImageIcon, Film, Sparkles, Loader2, Aperture, ArrowRight } from 'lucide-react';
 
 export const AIStudio: React.FC = () => {
   const [activeTab, setActiveTab] = useState<AITab>(AITab.CHAT);

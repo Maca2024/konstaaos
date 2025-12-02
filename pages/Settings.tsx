@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { User, Lock, Bell, CreditCard, Link2, Save, Trash2 } from 'lucide-react';
 
@@ -83,7 +84,7 @@ export const Settings = () => {
                </div>
             )}
             
-            {/* Other tabs placeholders for now or simple implementation */}
+            {/* Other tabs placeholders */}
             {['notifications', 'billing', 'connections'].includes(activeTab) && (
                 <div className="p-12 border border-dashed border-white/10 text-center text-gray-500 font-mono text-xs">
                     MODULE UNDER DEVELOPMENT

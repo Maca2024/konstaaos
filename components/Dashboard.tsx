@@ -26,24 +26,25 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
   return (
     <div className="relative min-h-full overflow-y-auto">
-      {/* Cinematic Hero Section - Aurora Borealis (User Pick 1) */}
-      <div className="relative h-[65vh] w-full overflow-hidden">
+      {/* Cinematic Hero Section - Aurora Borealis */}
+      <div className="relative h-[70vh] w-full overflow-hidden">
         <img 
           src={IMAGES.HERO.AURORA} 
           alt="Aurora Borealis" 
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover opacity-90 transition-transform duration-[60s] scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-arctic-950 via-arctic-950/20 to-transparent"></div>
         
+        {/* Adjusted vertical position as requested previously */}
         <div className="absolute bottom-40 left-0 p-12 w-full">
           <div className="max-w-7xl mx-auto">
             <span className="inline-block px-3 py-1 border border-white/20 rounded-full text-xs font-mono text-luxury-gold mb-4 backdrop-blur-md animate-pulse">
               SYSTEM STATUS: ONLINE
             </span>
-            <h1 className="text-5xl md:text-7xl font-serif text-white mb-4 tracking-tight">
+            <h1 className="text-5xl md:text-8xl font-serif text-white mb-6 tracking-tight drop-shadow-2xl">
               The Arctic <br />Operating System
             </h1>
-            <p className="text-gray-300 max-w-xl font-sans text-lg font-light leading-relaxed">
+            <p className="text-gray-200 max-w-xl font-sans text-lg font-light leading-relaxed drop-shadow-md">
               Welcome to the digital nervous system of the Konsta Punkka ecosystem. 
               Monitoring 9 global nodes and connecting 21,000+ wildlife enthusiasts.
             </p>
@@ -52,10 +53,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       </div>
 
       {/* Stats Bar - Floating Glass */}
-      <div className="max-w-7xl mx-auto px-8 -mt-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 -mt-24 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {stats.map((stat, idx) => (
-            <div key={idx} className="glass-panel p-6 rounded-none border-l-2 border-luxury-gold/50 backdrop-blur-xl">
+            <div key={idx} className="glass-panel p-6 rounded-none border-l-2 border-luxury-gold/50 backdrop-blur-xl bg-black/40">
               <div className="flex justify-between items-start mb-2">
                 <span className="text-gray-400 text-xs font-mono tracking-widest uppercase">{stat.label}</span>
                 {stat.trend > 0 && <TrendingUp className="w-3 h-3 text-luxury-gold" />}
@@ -83,49 +84,54 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 title: 'Project: Ghost of the Mountains', 
                 meta: 'Conservation • Himalayas',
                 icon: Globe,
-                img: IMAGES.WILDLIFE.LEOPARD // User Pick 6
+                img: IMAGES.WILDLIFE.LEOPARD 
               },
               { 
                 title: 'New Print: The White Wolf', 
                 meta: 'Fine Art • 5h ago',
                 icon: Camera,
-                img: IMAGES.WILDLIFE.WOLF // User Pick 2
+                img: IMAGES.WILDLIFE.WOLF 
               },
               { 
                 title: 'Svalbard: Puffin Migration', 
                 meta: 'Expedition Log • 1d ago',
                 icon: Users,
-                img: IMAGES.WILDLIFE.PUFFIN // User Pick 3
+                img: IMAGES.WILDLIFE.PUFFIN
               },
             ].map((item, i) => (
               <div onClick={() => handleSignalClick(item.title)} key={i} className="group flex items-center gap-6 p-6 border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer">
-                <div className="w-24 h-16 overflow-hidden rounded-sm relative shrink-0">
-                   <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-all duration-500" />
+                <div className="w-32 h-20 overflow-hidden rounded-sm relative shrink-0 border border-white/10">
+                   <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-serif text-white group-hover:text-luxury-gold transition-colors">{item.title}</h3>
+                  <h3 className="text-xl font-serif text-white group-hover:text-luxury-gold transition-colors">{item.title}</h3>
                   <p className="text-xs font-mono text-gray-500 mt-1 group-hover:text-gray-300 transition-colors">{item.meta}</p>
                 </div>
-                <ArrowRight className="w-4 h-4 text-gray-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all" />
+                <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white opacity-0 group-hover:opacity-100 transition-all" />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Operational Status - Squirrel Focus */}
+        {/* Operational Status - Frozen Face */}
         <div className="space-y-8">
            <h2 className="text-2xl font-serif text-white border-b border-white/10 pb-4">
             Node Status
           </h2>
           
-          <div className="glass-panel p-6 relative overflow-hidden group cursor-pointer border border-white/10">
-             <div className="absolute inset-0 transition-opacity">
-                {/* Updated to Frozen Face as per attachment request - Removed opacity to make it clear */}
-                <img src={IMAGES.KONSTA.FROZEN_FACE} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Node Status" />
+          <div className="glass-panel relative overflow-hidden group cursor-pointer border border-white/10 h-[400px]">
+             {/* Main Image Layer */}
+             <div className="absolute inset-0">
+                <img 
+                  src={IMAGES.KONSTA.FROZEN_FACE} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                  alt="Node Status" 
+                />
              </div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+             {/* Gradient Overlay for Text Readability */}
+             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
              
-             <div className="relative z-10 pt-48">
+             <div className="absolute bottom-0 left-0 w-full p-6 z-10">
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-2">
                         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></span>
@@ -133,14 +139,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                     </div>
                     <span className="text-xs text-gray-200 drop-shadow-md font-mono">65.01° N</span>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3 bg-black/40 backdrop-blur-md p-4 rounded-sm border border-white/10">
                     <div className="flex justify-between text-xs font-mono text-gray-300 border-b border-white/10 pb-2">
-                        <span className="drop-shadow-sm">TEMP</span>
-                        <span className="text-white drop-shadow-sm">-12°C</span>
+                        <span>TEMP</span>
+                        <span className="text-white">-12°C</span>
                     </div>
                     <div className="flex justify-between text-xs font-mono text-gray-300">
-                        <span className="drop-shadow-sm">LIGHT</span>
-                        <span className="text-white drop-shadow-sm">4h 20m</span>
+                        <span>LIGHT</span>
+                        <span className="text-white">4h 20m</span>
                     </div>
                 </div>
              </div>
@@ -149,7 +155,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <div className="p-6 border border-white/10 rounded-sm flex flex-col items-center text-center bg-arctic-900/30">
             <span className="text-luxury-gold text-4xl font-serif mb-2">100%</span>
             <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">Carbon Offset</span>
-            <p className="text-gray-400 text-sm mt-4 font-light">All digital and physical operations for Q1 2025 have been offset via Snow Leopard Trust.</p>
+            <p className="text-gray-400 text-xs mt-4 font-light leading-relaxed">All digital and physical operations for Q1 2025 have been offset via Snow Leopard Trust.</p>
           </div>
 
         </div>
