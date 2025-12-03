@@ -12,7 +12,7 @@ const getClient = async (): Promise<GoogleGenAI> => {
   
   const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY || '';
   if (!apiKey && !window.aistudio) {
-    console.warn('GEMINI_API_KEY not found. AI features will not work. Please set VITE_GEMINI_API_KEY environment variable.');
+    console.warn('Gemini API key not found. AI features will not work. Please set VITE_GEMINI_API_KEY or GEMINI_API_KEY environment variable.');
   }
   
   return new GoogleGenAI({ apiKey });
